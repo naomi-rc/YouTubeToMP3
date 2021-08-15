@@ -6,14 +6,13 @@ const app = express();
 app.use(cors());
 
 app.listen(4000, () => {
-    console.log("Server works!");
+    console.log("Server listening at http://localhost:4000");
 });
 
 app.get('/download', (req, resp) => {
     var URL = req.query.URL;
-    //resp.json({url: URL});
 
-    resp.header('Content-Disposition', 'attachment; filename="video.mp4');
+    resp.header('Content-Disposition', 'attachment; filename="audio_file.mp3"');
 
-    ytdl(URL, {format: 'mp4'}).pipe(resp);
+    ytdl(URL, {format: 'mp3'}).pipe(resp);
 });

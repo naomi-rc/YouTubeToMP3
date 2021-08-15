@@ -7,11 +7,6 @@ convertBtn.addEventListener("click", () => {
 
 });
 
-function sendURL(url){
-   /* fetch(`http://localhost:4000/download?URL=${url}`, {
-        METHOD: 'GET'        
-    }).then(resp => resp.json())
-    .then(json => console.log(json));
-    */
+function sendURL(url){    
    window.location.href = `http://localhost:4000/download?URL=${url}`;
 }

@@ -1,3 +1,5 @@
+const serverURL = `http://localhost:8000`
+
 var convertBtn = document.querySelector(".convertButton");
 var urlInput = document.querySelector(".URLinput");
 
@@ -8,5 +10,5 @@ convertBtn.addEventListener("click", () => {
 });
 
 function sendURL(url){    
-   window.location.href = `http://localhost:4000/download?URL=${url}`;
+   window.location.href = `${serverURL}/download?URL=${url}`;
 }

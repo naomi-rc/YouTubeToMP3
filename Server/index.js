@@ -1,4 +1,4 @@
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8000
 
 const express = require("express");
 const cors = require("cors");
@@ -7,11 +7,10 @@ const path = require('path');
 const app = express();
 
 app.use(cors());
-//app.use(express.static('client'));
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.listen(port, () => {
-    console.log("Server listening at http://localhost:4000");
+    console.log(`Server listening at http://localhost:${port}`);
 });
 
 app.get('/download', (req, resp) => {

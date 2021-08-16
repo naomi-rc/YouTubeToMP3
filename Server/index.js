@@ -1,11 +1,14 @@
+const port = process.env.PORT || 4000
+
 const express = require("express");
 const cors = require("cors");
 const ytdl = require("ytdl-core");
+const path = require('path');
 const app = express();
 
 app.use(cors());
-
-const port = process.env.PORT || 4000
+//app.use(express.static('client'));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.listen(port, () => {
     console.log("Server listening at http://localhost:4000");
